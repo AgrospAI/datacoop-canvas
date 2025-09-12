@@ -1,0 +1,91 @@
+/* components/Canvas.module.css */
+.canvasContainer {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f7f6; /* Light background for the entire canvas area */
+    min-height: 100vh; /* Ensure it takes at least the full viewport height */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.canvasHeader {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #27ae60; /* Green underline for headers */
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.canvasGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns of equal width */
+    gap: 15px; /* Space between cells */
+    margin-bottom: 30px; /* Space between different sections of the canvas */
+    width: 100%; /* Ensure grid takes full width */
+}
+
+.canvasFooterPlaceholder {
+    display: none; /* Hide these placeholders as they are only for layout adjustments in React structure */
+}
+
+/* Current Status Grid specific styling */
+.currentStatusGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns for the status stages */
+    gap: 10px;
+    margin-bottom: 30px;
+    width: 100%;
+    background-color: #fff; /* White background for the status row */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    align-items: center; /* Align items vertically */
+}
+
+.statusStageCell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px 10px;
+    border-radius: 5px;
+    cursor: pointer; /* Indicate it's clickable */
+    transition: background-color 0.3s ease;
+}
+
+.statusStageCell:hover {
+    background-color: #e0e0e0; /* Light grey on hover */
+}
+
+.stageTitle {
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.stageIndicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc; /* Default grey indicator */
+}
+
+/* Specific stage styling via dynamic class names */
+.exploratorystage .stageIndicator { background-color: #f39c12; } /* Orange */
+.preparatorystage .stageIndicator { background-color: #2ecc71; } /* Green */
+.implementationstage .stageIndicator { background-color: #3498db; } /* Blue */
+.operationalstage .stageIndicator { background-color: #9b59b6; } /* Purple */
+.scalingstage .stageIndicator { background-color: #e74c3c; } /* Red */
+
+/* For checkboxes within Cell.module.css */
+.checkboxLabel {
+    font-size: 12px;
+    color: #555;
+    flex-grow: 1;
+}

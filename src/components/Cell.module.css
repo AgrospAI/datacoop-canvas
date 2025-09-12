@@ -1,0 +1,63 @@
+/* components/Cell.module.css */
+.cell {
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cell:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.cellTitle {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.cellContent {
+    font-size: 12px;
+    color: #555;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    white-space: pre-wrap; /* Preserve line breaks from \n */
+}
+
+/* Specific styling for the "Shared processes" cell content for checkboxes */
+.cellContent ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.cellContent li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+.cellContent li input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(0.9);
+    accent-color: #27ae60; /* Green accent for checkboxes */
+}
+
+.cellContent .checkbox-label {
+    font-size: 12px;
+    color: #555;
+    flex-grow: 1;
+}

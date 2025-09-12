@@ -1,0 +1,20 @@
+/* styles/globals.css */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* Apply a consistent font */
+    background-color: #f0f2f5; /* Background for the entire page */
+}
+
+/* Ensure html, next/body, and main take full viewport height */
+html,
+body,
+#__next {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* The app-container class from the React version is now part of Canvas.module.css,
+   but if you need any other global styles, they'd go here. */
