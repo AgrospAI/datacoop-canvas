@@ -1,91 +1,315 @@
 /* components/Canvas.module.css */
-.canvasContainer {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    background-color: #f4f7f6; /* Light background for the entire canvas area */
-    min-height: 100vh; /* Ensure it takes at least the full viewport height */
-    width: 100%;
-    box-sizing: border-box;
-}
 
-.canvasHeader {
-    font-size: 24px;
-    font-weight: bold;
-    color: #2c3e50;
-    margin-bottom: 20px;
-    padding-bottom: 5px;
-    border-bottom: 2px solid #27ae60; /* Green underline for headers */
-    text-align: left;
-    width: 100%;
-    box-sizing: border-box;
+.canvasContainer {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
 }
 
 .canvasGrid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns of equal width */
-    gap: 15px; /* Space between cells */
-    margin-bottom: 30px; /* Space between different sections of the canvas */
-    width: 100%; /* Ensure grid takes full width */
-}
-
-.canvasFooterPlaceholder {
-    display: none; /* Hide these placeholders as they are only for layout adjustments in React structure */
-}
-
-/* Current Status Grid specific styling */
-.currentStatusGrid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 columns for the status stages */
-    gap: 10px;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 16px;
     margin-bottom: 30px;
+    position: relative;
+}
+
+.canvasHeaderTitleOrganizational,
+.canvasHeaderTitleWhy,
+.canvasHeaderTitleTechnical {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+.canvasHeaderTitleOrganizational {
+    border-bottom: 5px solid #AA5194;
     width: 100%;
-    background-color: #fff; /* White background for the status row */
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    align-items: center; /* Align items vertically */
+}
+
+.canvasHeaderTitleWhy {
+    border-bottom: 5px solid #FF0000;
+}
+
+.canvasHeaderTitleTechnical {
+    border-bottom: 5px solid #69B29B;
+}
+
+.columnGroup {
+    display: flex;
+    gap: 16px;
+}
+
+.columnGroup .column:first-child {
+  flex: 2;
+}
+
+
+.columnGroup .column:last-child {
+  flex: 1;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+    position: relative;
+}
+
+
+.keyPartnersCell { 
+    min-height: 140px;
+    background-color: #f8eff4; 
+}
+.resourcesCell { 
+    min-height: 140px;
+    background-color: #f8eff4; 
+}
+.businessCaseCell { 
+    min-height: 140px;
+    background-color: #f8eff4; 
+}
+.governanceModelCell { 
+    min-height: 200px;
+    background-color: #f8eff4; 
+}
+
+.sharedProcessesCell {
+    min-height: 440px;
+    background-color: #f8eff4;
+}
+
+.implementationRoadmapCell {
+    min-height: 200px;
+    background-color: #f8eff4;
+    width: 120%; /* opcional */
+}
+
+.contextCell { 
+    min-height: 140px;
+    background-color: #fff3f2; 
+}
+.addedValueCell { 
+    min-height: 140px;
+    background-color: #fff3f2; 
+}
+.motivationObjectivesCell {
+    min-height: 140px; 
+    background-color: #fff3f2; 
+}
+
+.dataSourcesCell { 
+    min-height: 215px;
+    background-color: #f1f7f5; 
+}
+.interoperabilityCell { 
+    min-height: 215px;
+    background-color: #f1f7f5; 
+}
+
+.iconBottomRight {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+}
+
+.currentStatusCell {
+    max-height: 80px;
+    overflow: hidden;
+    background-color: #f8eff4;
+}
+
+.technicalGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  gap: 16px
+}
+
+.technicalGrid .dataSourcesCell {
+  grid-column: 1 / 3; /* segunda celda en la segunda columna */
+}
+
+
+.technicalGrid .interoperabilityCell {
+  grid-column: 1 / 3; 
+}
+
+.technicalGrid .technicalConceptsModelsCell {
+  grid-column: 1 / 2;
+}
+
+.technicalConceptsModelsCell { 
+    background-color: #f1f7f5;
+    min-height: 200px; 
+    position: relative;
+    width: 170%;
+    left: -120%;
+
+}
+
+.infrastructureCharacteristicsCell { 
+    background-color: #f1f7f5; 
+    min-height: 200px;
+    position: relative;
+    width: 150%;
+    left: -50%;
+}
+
+/* Current Status Section */
+.canvasHeader {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 30px 0 15px 0;
+    color: #333;
+}
+
+.currentStatusGrid {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .statusStageCell {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #f9f9f9;
+    position: relative;
+    min-height: 80px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    text-align: center;
-    padding: 15px 10px;
-    border-radius: 5px;
-    cursor: pointer; /* Indicate it's clickable */
-    transition: background-color 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .statusStageCell:hover {
-    background-color: #e0e0e0; /* Light grey on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .stageTitle {
-    font-size: 12px;
     font-weight: bold;
+    font-size: 14px;
     color: #333;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .stageIndicator {
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    background-color: #ccc; /* Default grey indicator */
+    margin: 0 auto;
 }
 
-/* Specific stage styling via dynamic class names */
-.exploratorystage .stageIndicator { background-color: #f39c12; } /* Orange */
-.preparatorystage .stageIndicator { background-color: #2ecc71; } /* Green */
-.implementationstage .stageIndicator { background-color: #3498db; } /* Blue */
-.operationalstage .stageIndicator { background-color: #9b59b6; } /* Purple */
-.scalingstage .stageIndicator { background-color: #e74c3c; } /* Red */
+.checkboxList {
+    margin-top: 1rem;
+}
 
-/* For checkboxes within Cell.module.css */
+.checkboxHeader {
+    display: grid;
+    grid-template-columns: 140px 40px 40px;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.individualActive {
+  background-color: #444;
+  color: white;
+}
+
+.sharedActive {
+  background-color: #AA5194;
+  color: white;
+}
+
+
+.checkboxHeaderLabel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkboxRow {
+  display: grid;
+  grid-template-columns: 150px 40px 40px;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.labelWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+}
+
+.arrowIcon {
+    margin-bottom: 2px;
+    font-size: 14px;
+    color: #000000;
+}
+
 .checkboxLabel {
-    font-size: 12px;
-    color: #555;
-    flex-grow: 1;
+  text-align: left;
+}
+
+.checkboxRow input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #444;
+  cursor: pointer;
+}
+
+/* Stage-specific colors */
+.exploratorystage .stageIndicator {
+    background-color: #ff9800;
+}
+
+.preparatorystage .stageIndicator {
+    background-color: #4caf50;
+}
+
+.implementationstage .stageIndicator {
+    background-color: #2196f3;
+}
+
+.operationalstage .stageIndicator {
+    background-color: #9c27b0;
+}
+
+.scalingstage .stageIndicator {
+    background-color: #f44336;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .canvasGrid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .columnGroup {
+        flex-direction: column;
+    }
+    
+    .implementationRoadmapCell {
+        position: static;
+        width: 100%;
+    }
+    
+    .currentStatusGrid {
+        flex-direction: column;
+        gap: 8px;
+    }
 }

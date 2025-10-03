@@ -1,8 +1,8 @@
-import Image from "next/image";
-import Canvas from '@/components/Canvas';
+import Canvas from "@/components/Canvas";
+import { exampleUseCase } from "@/data/UseCaseExample";
 
-export default function Home() {
-  return (
-    <Canvas/>
-  );
-}
+const DataCoopCanvasPage = () => {
+	return <Canvas useCaseData={exampleUseCase} />;
+};
+
+export default DataCoopCanvasPage;
