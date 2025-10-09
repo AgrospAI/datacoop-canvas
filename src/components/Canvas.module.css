@@ -84,7 +84,6 @@
 .implementationRoadmapCell {
     min-height: 200px;
     background-color: #f8eff4;
-    width: 120%; /* opcional */
 }
 
 .contextCell { 
@@ -144,8 +143,7 @@
     background-color: #f1f7f5;
     min-height: 200px; 
     position: relative;
-    width: 170%;
-    left: -120%;
+  
 
 }
 
@@ -153,8 +151,7 @@
     background-color: #f1f7f5; 
     min-height: 200px;
     position: relative;
-    width: 150%;
-    left: -50%;
+    
 }
 
 /* Current Status Section */
