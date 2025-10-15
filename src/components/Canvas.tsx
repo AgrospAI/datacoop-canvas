@@ -194,29 +194,51 @@ const Canvas: React.FC<CanvasProps> = ({useCaseData}) => {
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '40px', width: '100%' }}>
                 <span>{useCaseData.currentStatus.content}</span>
             
-                {statusStages.map((stage, index) => (
-                  <div
-                    key={index}
-                    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-                  >
+                {statusStages.map((stage, index) => {
+                  const isActive =
+                    stage.title === useCaseData.currentStatus.activeStage;
+                                
+                  return (
                     <div
+                      key={index}
                       style={{
-                        width: '120px',
-                        height: '16px',
-                        backgroundColor: stageColors[index % stageColors.length],
-                        position: 'relative',
-                        top: '-20px',
-                        marginBottom: '-16px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        opacity: isActive ? 1 : 0.3,
+                        transition: 'opacity 0.3s ease',
                       }}
-                    />
-                    <span>{stage.title}</span>
-                  </div>
-                ))}
+                    >
+                      <div
+                        style={{
+                          width: '120px',
+                          height: '16px',
+                          backgroundColor: stageColors[index % stageColors.length],
+                          position: 'relative',
+                          top: '-20px',
+                          marginBottom: '-16px',
+                          border: isActive ? '3px solid black' : '1px solid transparent',
+                          boxShadow: isActive ? '0 0 6px rgba(0,0,0,0.4)' : 'none',
+                          transition: 'all 0.3s ease',
+                        }}
+                      />
+                      <span
+                        style={{
+                          fontWeight: isActive ? 'bold' : 'normal',
+                          color: isActive ? '#000' : '#666',
+                          transition: 'color 0.3s ease, font-weight 0.3s ease',
+                        }}
+                      >
+                        {stage.title}
+                      </span>
+                    </div>
+                  );
+                })}
+
               </div>
             }
             style={{ width: '100%', position: 'relative' }}
           />
-
             <CgSandClock className={styles.iconBottomRight} color="gray" size={20} />
         </div>
 

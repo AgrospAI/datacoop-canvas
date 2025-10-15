@@ -26,6 +26,8 @@
 
 .cellContent {
     font-size: 12px;
+    text-align: justify;
+    line-height: 1.5;
     color: #555;
     flex-grow: 1;
     display: flex;
@@ -44,6 +46,7 @@
 
 .cellContent li {
     display: grid;
+    text-align: justify;
     align-items: center;
     margin-bottom: 8px;
     width: 100%;

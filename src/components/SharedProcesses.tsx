@@ -7,15 +7,22 @@ import {FaArrowUp} from "react-icons/fa";
 interface SharedProcessesProps {
     description: string;
     steps?: string[];
+    initialChecked?: {
+    	[key: string]: {individual: boolean, shared: boolean};
+    };
 }
 
 const defaultSteps = ["Use", "Visualize", "Interpret", "Combine", "Transform", "Store", "Create"];
 
-const SharedProcesses: React.FC<SharedProcessesProps> = ({ description, steps = defaultSteps }) => {
+const SharedProcesses: React.FC<SharedProcessesProps> = 
+({	description, 
+	steps = defaultSteps,
+	initialChecked = {},
+}) => {
   const [checked, setChecked] = useState<{ [key: string]: { individual: boolean; shared: boolean } }>(
     steps.reduce((acc, step) => {
-      acc[step] = { individual: false, shared: false };
-      return acc;
+    	acc[step] = initialChecked[step] || { individual: false, shared: false};
+    	return acc;
     }, {} as { [key: string]: { individual: boolean; shared: boolean } })
   );
 
