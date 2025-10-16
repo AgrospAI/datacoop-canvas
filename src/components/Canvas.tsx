@@ -191,12 +191,31 @@ const Canvas: React.FC<CanvasProps> = ({useCaseData}) => {
             className={styles.currentStatusCell}
             title={useCaseData.currentStatus.title}
             content={
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '40px', width: '100%' }}>
-                <span>{useCaseData.currentStatus.content}</span>
+              <div style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: typeof window !== 'undefined' && window.innerWidth < 768 ? '16px' : '40px',
+                width: '100%',
+                flexDirection: typeof window !== 'undefined' && window.innerWidth < 768 ? 'column' : 'row',
+                flexWrap: 'wrap',
+              }}>
+              <span style={{ flex: '1 1 60%', minWidth: '280px' }}>
+                {useCaseData.currentStatus.content}
+              </span>
+
+              <div
+                style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: typeof window !== 'undefined' && window.innerWidth < 768 ? '12px' : '24px',
+                  justifyContent: 'flex-start',
+                }}
+              >
             
-                {statusStages.map((stage, index) => {
-                  const isActive =
-                    stage.title === useCaseData.currentStatus.activeStage;
+              {statusStages.map((stage, index) => {
+                const isActive = stage.title === useCaseData.currentStatus.activeStage;
+                const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
                                 
                   return (
                     <div
@@ -211,14 +230,14 @@ const Canvas: React.FC<CanvasProps> = ({useCaseData}) => {
                     >
                       <div
                         style={{
-                          width: '120px',
+                          width: isMobile ? '100px' : '120px',
                           height: '16px',
                           backgroundColor: stageColors[index % stageColors.length],
                           position: 'relative',
-                          top: '-20px',
-                          marginBottom: '-16px',
+                          top: isMobile ? '0' : '-20px',     // 👈 No lo subimos en móvil
+                          marginBottom: isMobile ? '4px' : '-16px', // 👈 Dejamos margen natural
                           border: isActive ? '3px solid black' : '1px solid transparent',
-                          boxShadow: isActive ? '0 0 6px rgba(0,0,0,0.4)' : 'none',
+                          boxShadow: isActive ? '0 0 6px rgba(0,0,0,0.4)' : 'none', 
                           transition: 'all 0.3s ease',
                         }}
                       />
@@ -234,7 +253,7 @@ const Canvas: React.FC<CanvasProps> = ({useCaseData}) => {
                     </div>
                   );
                 })}
-
+              </div>
               </div>
             }
             style={{ width: '100%', position: 'relative' }}
