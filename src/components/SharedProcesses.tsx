@@ -61,13 +61,11 @@ const SharedProcesses: React.FC<SharedProcessesProps> =
               <input
                 type="checkbox"
                 checked={individual}
-                onChange={() => toggle(step, "individual")}
                 className={individual ? styles.individualActive : ""}
               />
               <input
                 type="checkbox"
                 checked={shared}
-                onChange={() => toggle(step, "shared")}
                 className={shared ? styles.sharedActive : ""}
               />
             </li>
