@@ -60,51 +60,42 @@
 
 
 .keyPartnersCell { 
-    min-height: 140px;
     background-color: #f8eff4; 
 }
 .resourcesCell { 
-    min-height: 140px;
     background-color: #f8eff4; 
 }
 .businessCaseCell { 
-    min-height: 140px;
     background-color: #f8eff4; 
 }
 .governanceModelCell { 
-    min-height: 200px;
     background-color: #f8eff4; 
 }
 
 .sharedProcessesCell {
-    min-height: 440px;
     background-color: #f8eff4;
 }
 
 .implementationRoadmapCell {
-    min-height: 200px;
     background-color: #f8eff4;
 }
 
 .contextCell { 
-    min-height: 140px;
     background-color: #fff3f2; 
 }
 .addedValueCell { 
-    min-height: 140px;
     background-color: #fff3f2; 
 }
 .motivationObjectivesCell {
-    min-height: 140px; 
     background-color: #fff3f2; 
 }
 
-.dataSourcesCell { 
-    min-height: 215px;
+.dataSourcesCell {
+    min-height: 200px; 
     background-color: #f1f7f5; 
 }
 .interoperabilityCell { 
-    min-height: 215px;
+    min-height: 200px;
     background-color: #f1f7f5; 
 }
 
@@ -261,7 +252,7 @@
   width: 18px;
   height: 18px;
   border: 1px solid #444;
-  cursor: pointer;
+  cursor: default;
 }
 
 /* Stage-specific colors */

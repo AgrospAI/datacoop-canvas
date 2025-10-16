@@ -234,8 +234,8 @@ const Canvas: React.FC<CanvasProps> = ({useCaseData}) => {
                           height: '16px',
                           backgroundColor: stageColors[index % stageColors.length],
                           position: 'relative',
-                          top: isMobile ? '0' : '-20px',     // 👈 No lo subimos en móvil
-                          marginBottom: isMobile ? '4px' : '-16px', // 👈 Dejamos margen natural
+                          top: isMobile ? '0' : '-20px',
+                          marginBottom: isMobile ? '4px' : '-16px',
                           border: isActive ? '3px solid black' : '1px solid transparent',
                           boxShadow: isActive ? '0 0 6px rgba(0,0,0,0.4)' : 'none', 
                           transition: 'all 0.3s ease',
