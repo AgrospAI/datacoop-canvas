@@ -102,7 +102,7 @@ export const exampleUseCase: UseCaseData = {
   currentStatus: {
     title: "Current status",
     content:
-      "The project is currently in the exploratory stage, with a functional prototype being tested in two pilot sites. Early results show promising improvements in data integration and operational visibility.",
+      "The project is currently in the exploratory stage, with a functional prototype being tested in two pilot sites. Early results show promising improvements in data integration and operational visibility. Feedback from stakeholders is being collected to refine the user interfaces and reporting mechanisms before wider deployment. Next steps involve expanding the sensor network and integrating external data sources to enhance model accuracy and predictive capability.",
 	activeStage: 'Operational stage'
   },
 };
