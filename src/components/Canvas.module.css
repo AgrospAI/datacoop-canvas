@@ -94,7 +94,7 @@
     background-color: #f1f7f5; 
 }
 .interoperabilityCell { 
-    min-height: 200px;
+    min-height: 150px;
     background-color: #f1f7f5; 
 }
 
@@ -130,7 +130,7 @@
 
 .technicalConceptsModelsCell { 
     background-color: #f1f7f5;
-    min-height: 200px; 
+    min-height: 200px;
     position: relative;
 }
 
