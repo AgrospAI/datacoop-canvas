@@ -35,7 +35,7 @@ export const animalWellbeingUseCase: UseCaseData = {
         title: "Shared processes",
         content: (
             <SharedProcesses
-                description="The process involves several steps performed individually by each partner, but coordinated through shared digital platforms and standard operating procedures. Each partner collects and preprocesses data using its own tools, then publishes the harmonized results to a central repository."
+                description="Some steps are carried out individually by each partner. They collect and preprocess their data, then publish the results to the catalogue. Afterwards, interpretation, combination and transformation can take place within the data space. Each actor stores their data and results independently. Finally, the creation of new services or use cases can be a shared process."
                 initialChecked={{
                     Use: { individual: true, shared: false },
                     Visualize: { individual: true, shared: false },
