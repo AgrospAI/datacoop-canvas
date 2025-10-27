@@ -87,7 +87,7 @@ export const precisionLivestockUseCase: UseCaseData = {
         content:
             "Built upon Gaia-X standards and Pontus-X interoperability services. \n" +
             "\n" +
-            "Ensures semantic, legal and technical compatibility between participants through federated authentication, shared ontologies and standard APIs for data exchange.\",",
+            "Ensures semantic, legal and technical compatibility between participants through federated authentication, shared ontologies and standard APIs for data exchange.",
     },
     businessCase: {
         title: "Business case",
@@ -125,7 +125,7 @@ export const precisionLivestockUseCase: UseCaseData = {
         content:
             "The algorithm is a container hosted on DockerHub, while the input data are the formats mentioned before and stored in a private MinIO instance.\n" +
             "\n" +
-            "Processing occurs in an isolated environment within a Kubernetes cluster, deployed at the Universitat de Lleida. Results are shared in a decentralized manner via IPFS.\",",
+            "Processing occurs in an isolated environment within a Kubernetes cluster, deployed at the Universitat de Lleida. Results are shared in a decentralized manner via IPFS.",
     },
     currentStatus: {
         title: "Current status",
