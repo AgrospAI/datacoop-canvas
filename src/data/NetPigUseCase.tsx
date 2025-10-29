@@ -146,7 +146,7 @@ export const netPigUseCase: UseCaseData = {
     currentStatus: {
         title: "Current status",
         content:
-            "The project is currently in the operational stage, with real assets published in the catalogue that users can interact with. Next steps incorporating additional stakeholders, data and service providers, from the sector.",
+            "The project is currently in its operational phase, with real assets already published in the catalogue and available for user interaction. The next steps involve incorporating additional stakeholders, as well as new data and service providers from the sector.",
         activeStage: 'Operational stage'
     },
 };
