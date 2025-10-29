@@ -25,11 +25,14 @@ export interface UseCaseData {
 export const netPigUseCase: UseCaseData = {
     keyPartners: {
         title: "Key partners",
-        content:
-            "• Enabler: AgrospAI, Universitat de Lleida\n" +
-            "• Data providers: pig farmers, technical offices\n" +
-            "• Service providers: certification entities\n" +
-            "• Consumers: final consumers",
+        content: (
+            <>
+                <strong>Enabler:</strong> AgrospAI, Universitat de Lleida <br />
+                <strong>Data providers:</strong> pig farmers, technical offices <br />
+                <strong>Service providers:</strong> certification entities, public administrations <br />
+                <strong>Consumers:</strong> pig farmers, technical offices, certification entities, public administrations
+            </>
+        ),
     },
     sharedProcesses: {
         title: "Shared processes",
@@ -67,15 +70,22 @@ export const netPigUseCase: UseCaseData = {
     },
     resources: {
         title: "Resources",
-        content:
-            "• Promoting entity: AgrospAI (UdL)\n" +
-            "• Budget: between 50K and 60K €\n" +
-            "• Infrastructure: federated data space",
+        content: (
+            <>
+                <strong>Promoting entity:</strong> AgrospAI (UdL) <br />
+                <strong>Budget:</strong> between 50K and 60K € <br />
+                <strong>Infrastructure:</strong> federated data space
+            </>
+        ),
     },
     addedValue: {
         title: "Added value",
         content:
-            "NetPig enhances sustainability, transparency and efficiency across the pig farming value chain. It simplifies certification processes and reduces administrative workload for both farmers and regulators. The solution also strengthens trust and promotes fair participation among farms of different sizes, fostering data-driven innovation within AgrospAI.",
+            "For farmers and technical offices, it reduces administrative workloads, eliminates repetitive manual reporting, and facilitates faster access to both mandatory and voluntary environmental certifications.\n" +
+            "\n" +
+            "For public administrations and certifying bodies, it delivers standardized, traceable, and interoperable data that streamline auditing processes.\n" +
+            "\n" +
+            "Beyond operational gains, the initiative strengthens transparency and consumer trust by demonstrating verifiable commitment to sustainable farming.",
     },
     motivationObjectives: {
         title: "Motivation & objectives",
@@ -87,16 +97,21 @@ export const netPigUseCase: UseCaseData = {
     interoperability: {
         title: "Interoperability",
         content:
-            "Built upon Gaia-X standards and Pontus-X interoperability services, the NetPig use case ensures seamless collaboration among diverse participants in the AgrospAI ecosystem. \n" +
+            "Building on AgrospAI's ecosystem, interoperability is addressed on two levels. \n" +
             "\n" +
-            "Federated identity and access management enable secure authentication, while shared ontologies and standardized APIs ensure that all actors interpret and use data in the same way.",
+            "At the federation level, it connects with other data spaces through the Pontus-X ecosystem, aligned with Gaia-X standards and using trust and clearing-house mechanisms to guarantee secure and verifiable exchanges.\n" +
+            "\n" +
+            "At the data level, interoperability is achieved through semantic mapping based on ontologies and Semantic Web technologies.",
     },
     businessCase: {
         title: "Business case",
-        content:
-            "• Costs: related to personnel, training, equipment, computing and interoperability services.\n" +
-            "\n" +
-            "• Expected benefits:  emission reduction, process optimization, access to environmental certifications and new business opportunities for all stakeholders.",
+        content: (
+            <>
+                <strong>Costs:</strong> related to personnel, training, equipment, computing and interoperability services. <br />
+                <br />
+                <strong>Expected benefits:</strong> emission reduction, process optimization, access to environmental certifications and new business opportunities for all stakeholders.
+            </>
+        ),
     },
     governanceModel: {
         title: "Governance model",
@@ -109,10 +124,10 @@ export const netPigUseCase: UseCaseData = {
         title: "Implementation roadmap",
         content:
             "1. Analysis of the context.\n" +
-            "2. Use case definition.\n" +
-            "3. Use case feasibility assessment guide.\n" +
-            "4. Use case design guide.\n" +
-            "5. Practical implementation.",
+            "2. Use case feasibility assessment guide.\n" +
+            "3. Use case design guide.\n" +
+            "4. Algorithm development.\n" +
+            "5. Deployment within the data space.",
     },
     technicalConceptsModels: {
         title: "Technical concepts/models",
