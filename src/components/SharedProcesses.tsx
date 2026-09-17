@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Canvas.module.css";
 import {FaArrowUp} from "react-icons/fa";
 
@@ -19,22 +19,10 @@ const SharedProcesses: React.FC<SharedProcessesProps> =
 	steps = defaultSteps,
 	initialChecked = {},
 }) => {
-  const [checked, setChecked] = useState<{ [key: string]: { individual: boolean; shared: boolean } }>(
-    steps.reduce((acc, step) => {
-    	acc[step] = initialChecked[step] || { individual: false, shared: false};
-    	return acc;
-    }, {} as { [key: string]: { individual: boolean; shared: boolean } })
-  );
-
-  const toggle = (step: string, type: "individual" | "shared") => {
-    setChecked((prev) => ({
-      ...prev,
-      [step]: {
-        ...prev[step],
-        [type]: !prev[step][type],
-      },
-    }));
-  };
+const checked = steps.reduce((acc, step) => {
+    acc[step] = initialChecked[step] || { individual: false, shared: false };
+    return acc;
+  }, {} as { [key: string]: { individual: boolean; shared: boolean } });
 
   return (
     <>
@@ -61,11 +49,13 @@ const SharedProcesses: React.FC<SharedProcessesProps> =
               <input
                 type="checkbox"
                 checked={individual}
+                readOnly
                 className={individual ? styles.individualActive : ""}
               />
               <input
                 type="checkbox"
                 checked={shared}
+                readOnly
                 className={shared ? styles.sharedActive : ""}
               />
             </li>
